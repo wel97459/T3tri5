@@ -306,7 +306,7 @@ void main()
 	init_game();
 
     textcolor(COLOR_WHITE);              // Set text color to white
-    vidstrcpyxy(9,1,"T3TRI5 BY WINSTON 2023");
+    vidstrcpyxy(9,1,"T3TRI5 BY WEL97459 2023");
 
 	x = X_SIZE>>1;
     y = Y_SIZE>>1;               // Set x and y to middle of screen
