@@ -1,3 +1,6 @@
 [submodule "TinyTetris"]
 	path = src/TinyTetris
 	url = git@github.com:wel97459/TinyTetris.git
+[submodule "src/TinyTetris"]
+	path = src/TinyTetris
+	url = https://github.com/wel97459/TinyTetris
