@@ -1,7 +1,3 @@
-/*
-    move_shape example by Marcel van Tongoren 
-*/
-
 #include <stdint.h>
 
 #include "devkit/video/vis_video.h"
