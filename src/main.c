@@ -220,13 +220,13 @@ void RemoveLine(Tetris *t, uint8_t yy)
 
 void UpdateInfo(Tetris *t)
 { 
-	loc_add = Y2VidMem[2];
+	loc_add = Y2VidMem[3];
 	textcolor(COLOR_CYAN); printstr("SCORE: "); 
 	textcolor(COLOR_WHITE); printint(T.score, 0);
-	loc_add = Y2VidMem[3];
+	loc_add = Y2VidMem[4];
 	textcolor(COLOR_CYAN); printstr("LINES: "); 
 	textcolor(COLOR_WHITE); printint(T.linesRemoved, 0);
-	loc_add = Y2VidMem[4];
+	loc_add = Y2VidMem[5];
 	textcolor(COLOR_CYAN); printstr("LEVEL: ");
 	textcolor(COLOR_WHITE); printint(T.level, 0);
 	// loc_add = Y2VidMem[5];
@@ -235,7 +235,7 @@ void UpdateInfo(Tetris *t)
 	// textcolor(COLOR_WHITE); printint(T.board_min_y, 0);
 
 	if(T.gameover){
-		loc_add = Y2VidMem[6];
+		loc_add = Y2VidMem[7];
 	    printstr("GAME OVER!");
 	}
 }
@@ -336,17 +336,18 @@ void main()
 				setBit(&tetris.move, 0);
 			}else if(key == 0x70){ //P - Pause
 				setBit(&tetris.move, 4);
-				loc_add = Y2VidMem[6];
+				loc_add = Y2VidMem[7];
 				if(tetris.pause){
 					printstr("       ");
 				} else {
 					printstr("PAUSED.");
 				}
-			}
-			if(key == 0x63 || tetris.gameover & key != 0){ //C - Reset
+			}else if(key == 0x63 || tetris.gameover & key != 0){ //C - Reset
 				init_game();
-			}
-			
+			} else {
+				loc_add = Y2VidMem[0];
+				printstr(" ");
+			}			
 		}	
     }
 }
