@@ -95,9 +95,10 @@ void printint(int s, unsigned char nZreos){ //print an integer
 void Clear(Tetris *t)
 {
 	unsigned short int vidmem;
+
 	vidclr(0xf800, X_SIZE*Y_SIZE);
-	
-	shapechar(shapes, 1, 12); // Shape 9 characters as defined above in 'shapes'
+
+	load_shape(1, 12, shapes);
 
 	vidchar (TETRIS_TOP+14, TOP_LEFT);
 	vidchar (TETRIS_TOP+25, TOP_RIGHT);
